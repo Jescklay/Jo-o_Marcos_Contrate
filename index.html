@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <!-- ==========================================================
+         SECTION: HEAD & METADADOS
+         ========================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Marcos | Músico Profissional</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Flatpickr (Calendário Interativo) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { 900: '#0a0a0c', 800: '#121216', 700: '#1a1a22', 600: '#262633' },
+                        gold: { 400: '#facc15', 500: '#eab308', 600: '#ca8a04' }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Vinculação do Arquivo CSS Separado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-dark-900">
+
+    <!-- ==========================================================
+         SECTION: HEADER & NAVEGAÇÃO
+         ========================================================== -->
+    <header id="header-section"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-dark-900/80 backdrop-blur-md border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero-section" class="flex items-center space-x-2 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-600 to-gold-400 flex items-center justify-center text-dark-900 font-bold text-xl shadow-lg shadow-gold-500/20">
+                    JM
+                </div>
+                <span class="font-heading font-bold text-lg tracking-wider text-white">JOÃO MARCOS</span>
+            </a>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#hero-section" class="hover:text-gold-400 transition-colors">Início</a>
+                <a href="#about-section" class="hover:text-gold-400 transition-colors">Sobre Mim</a>
+                <a href="#photos-section" class="hover:text-gold-400 transition-colors">Fotos</a>
+                <a href="#videos-section" class="hover:text-gold-400 transition-colors">Vídeos</a>
+                <a href="#shows-section" class="hover:text-gold-400 transition-colors">Shows</a>
+                <a href="#booking-section"
+                    class="bg-gold-500 text-dark-900 px-5 py-2.5 rounded-full font-bold hover:bg-gold-400 transition-all shadow-md shadow-gold-500/20">Contratar</a>
+            </nav>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn"
+                class="md:hidden text-2xl text-gray-300 hover:text-gold-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Drawer Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-6 py-6 space-y-4">
+            <a href="#hero-section" class="mobile-link block text-lg font-medium hover:text-gold-400">Início</a>
+            <a href="#about-section" class="mobile-link block text-lg font-medium hover:text-gold-400">Sobre Mim</a>
+            <a href="#photos-section" class="mobile-link block text-lg font-medium hover:text-gold-400">Fotos</a>
+            <a href="#videos-section" class="mobile-link block text-lg font-medium hover:text-gold-400">Vídeos</a>
+            <a href="#shows-section" class="mobile-link block text-lg font-medium hover:text-gold-400">Shows</a>
+            <a href="#booking-section"
+                class="mobile-link block text-lg font-bold text-dark-900 bg-gold-500 text-center py-3 rounded-xl">Contratar
+                / Agenda</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================================================
+             SECTION: HERO (PÁGINA INICIAL COM EFEITO DE DIGITAÇÃO)
+             ========================================================== -->
+        <section id="hero-section" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <div
+                class="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-600/20 via-dark-900 to-dark-900">
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+                <span
+                    class="inline-block py-1.5 px-4 rounded-full bg-dark-700 border border-gold-500/30 text-gold-400 text-sm font-semibold tracking-widest uppercase mb-6 shadow-sm">
+                    Músico Profissional & Intérprete
+                </span>
+
+                <h1 class="font-heading font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight mb-6">
+                    <span id="typed-name"
+                        class="bg-gradient-to-r from-white via-gray-200 to-gold-400 bg-clip-text text-transparent"></span>
+                    <span class="cursor">|</span>
+                </h1>
+
+                <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-10 font-light">
+                    Levando emoção, energia contagiante e repertório impecável para o seu evento, casamento, festival ou
+                    casa noturna.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#booking-section"
+                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-500 text-dark-900 font-bold text-lg hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/25 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Consultar Agenda & Contratar</span>
+                    </a>
+                    <a href="#about-section"
+                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-dark-700 border border-dark-600 text-white font-medium text-lg hover:bg-dark-600 transition-all">
+                        Conheça Minha Trajetória
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             SECTION: SOBRE MIM
+             ========================================================== -->
+        <section id="about-section" class="py-24 bg-dark-800 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-3">Sobre Mim</h2>
+                    <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-3 max-w-xl mx-auto">Paixão pela música e dedicação total a cada
+                        performance ao vivo.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 relative group">
+                        <div
+                            class="absolute -inset-2 bg-gradient-to-r from-gold-600 to-gold-400 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500">
+                        </div>
+                        <div
+                            class="relative rounded-2xl overflow-hidden border border-dark-700 bg-dark-900 aspect-[4/5] shadow-2xl">
+                            <img src="img/Perfil.jpeg" alt="João Marcos Músico" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6">
+                        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+                            Transformando momentos em memórias inesquecíveis através da música.
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            Olá! Sou <strong class="text-gold-400 font-semibold">João Marcos</strong>, músico
+                            profissional com anos de estrada dedicados à arte de tocar e encantar públicos de todos os
+                            portes. Seja em apresentações acústicas intimistas ou grandes palcos, meu compromisso é
+                            entregar uma experiência sonora refinada.
+                        </p>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
+                            <div class="bg-dark-900 border border-dark-700 p-4 rounded-xl text-center">
+                                <span class="block font-heading font-bold text-3xl text-gold-400 mb-1">+10</span>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider">Anos de Carreira</span>
+                            </div>
+                            <div class="bg-dark-900 border border-dark-700 p-4 rounded-xl text-center">
+                                <span class="block font-heading font-bold text-3xl text-gold-400 mb-1">+5000</span>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider">Shows Realizados</span>
+                            </div>
+                            <div
+                                class="bg-dark-900 border border-dark-700 p-4 rounded-xl text-center col-span-2 sm:col-span-1">
+                                <span class="block font-heading font-bold text-3xl text-gold-400 mb-1">100%</span>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider">Comprometimento</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+     SECTION: FOTOS
+     ========================================================== -->
+        <section id="photos-section" class="py-24 bg-dark-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-3">Fotos</h2>
+                    <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-3 max-w-xl mx-auto">Registros de momentos marcantes nos palcos e
+                        estúdios.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Foto 1 usando imagem local da pasta img -->
+                    <div class="photo-item group relative rounded-2xl overflow-hidden border border-dark-700 aspect-[4/3] cursor-pointer bg-dark-800"
+                        onclick="openModal(this)">
+                        <img src="img/WhatsApp Image 2026-09-22 at 10.57.30.jpeg" alt="João Marcos no Palco"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm flex items-center gap-2"><i
+                                    class="fa-solid fa-magnifying-glass-plus text-gold-400"></i> Ampliar Foto</span>
+                        </div>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div class="photo-item group relative rounded-2xl overflow-hidden border border-dark-700 aspect-[4/3] cursor-pointer bg-dark-800"
+                        onclick="openModal(this)">
+                        <img src="img/CardMusica1.webp" alt="Foto 2"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm flex items-center gap-2"><i
+                                    class="fa-solid fa-magnifying-glass-plus text-gold-400"></i> Ampliar Foto</span>
+                        </div>
+                    </div>
+
+                    <!-- Foto 3 -->
+                    <div class="photo-item group relative rounded-2xl overflow-hidden border border-dark-700 aspect-[4/3] cursor-pointer bg-dark-800"
+                        onclick="openModal(this)">
+                        <img src="img/istockphoto-1324561072-2048x2048.jpg" alt="Foto 3"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm flex items-center gap-2"><i
+                                    class="fa-solid fa-magnifying-glass-plus text-gold-400"></i> Ampliar Foto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Destaque da Foto (Lightbox) -->
+        <div id="photoModal"
+            class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+            onclick="closeModal()">
+            <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center"
+                onclick="event.stopPropagation()">
+                <button onclick="closeModal()"
+                    class="absolute -top-12 right-0 text-white text-3xl hover:text-gold-400 transition-colors focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <img id="modalImage" src="" alt="Foto Ampliada"
+                    class="max-h-[85vh] max-w-full object-contain rounded-xl shadow-2xl border border-dark-700">
+            </div>
+        </div>
+
+
+        <!-- ==========================================================
+             SECTION: VÍDEOS
+             ========================================================== -->
+        <section id="videos-section" class="py-24 bg-dark-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-3">Vídeos</h2>
+                    <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-3 max-w-xl mx-auto">Assista a trechos de apresentações e performances ao
+                        vivo.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-dark-900 border border-dark-700 rounded-2xl overflow-hidden shadow-xl">
+                        <div class="aspect-video relative bg-dark-700 flex items-center justify-center">
+                            <iframe class="w-full h-full absolute inset-0" src="https://www.youtube-embed.mock/video1"
+                                title="Vídeo 1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-lg text-white mb-1">Live Acústica no Rooftop</h3>
+                            <p class="text-sm text-gray-400">Melhores momentos da apresentação ao vivo.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-900 border border-dark-700 rounded-2xl overflow-hidden shadow-xl">
+                        <div class="aspect-video relative bg-dark-700 flex items-center justify-center">
+                            <iframe class="w-full h-full absolute inset-0" src="https://www.youtube-embed.mock/video2"
+                                title="Vídeo 2" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-lg text-white mb-1">Festival de Verão - Show Completo
+                            </h3>
+                            <p class="text-sm text-gray-400">Energia lá em cima com o público.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             SECTION: SHOWS
+             ========================================================== -->
+        <section id="shows-section" class="py-24 bg-dark-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-3">Shows</h2>
+                    <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-3 max-w-xl mx-auto">Confira a agenda de apresentações abertas ao público.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <div
+                        class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+                        <div class="flex items-center space-x-4 text-center sm:text-left">
+                            <div class="bg-dark-900 border border-dark-700 rounded-xl p-4 min-w-[90px]">
+                                <span class="block text-2xl font-heading font-bold text-gold-400">Data a
+                                    confirmar</span>
+                                <span class="text-xs text-gray-400 uppercase">MÊS A CONFIRMAR</span>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-white">Local a combinar</h3>
+                                <p class="text-sm text-gray-400"><i
+                                        class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Cidade a confirmar</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-4 py-2 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold border border-gold-500/20">A
+                            confirmado</span>
+                    </div>
+
+                    <div
+                        class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+                        <div class="flex items-center space-x-4 text-center sm:text-left">
+                            <div class="bg-dark-900 border border-dark-700 rounded-xl p-4 min-w-[90px]">
+                                <span class="block text-2xl font-heading font-bold text-gold-400">Data a
+                                    confirmar</span>
+                                <span class="text-xs text-gray-400 uppercase">MêS A CONFIRMAR</span>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-white">Local a combinar</h3>
+                                <p class="text-sm text-gray-400"><i
+                                        class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Cidade a confirmar</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-4 py-2 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold border border-gold-500/20">A
+                            confirmado</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             SECTION: AGENDA & FORMULÁRIO (WHATSAPP)
+             ========================================================== -->
+        <section id="booking-section" class="py-24 bg-dark-800 relative">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-3">Agenda</h2>
+                    <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-3">Selecione a data no calendário interativo e preencha para enviar ao
+                        WhatsApp.</p>
+                </div>
+
+                <form id="whatsapp-form"
+                    class="bg-dark-900 border border-dark-700 rounded-3xl p-8 sm:p-10 shadow-2xl space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Nome do Contratante</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500"><i
+                                    class="fa-solid fa-user"></i></span>
+                            <input type="text" id="contractor-name" required
+                                class="w-full bg-dark-800 border border-dark-700 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-gold-500"
+                                placeholder="Seu nome completo">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Data Desejada (Calendário em Tempo
+                            Real)</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500"><i
+                                    class="fa-solid fa-calendar-days"></i></span>
+                            <input type="text" id="event-date" required
+                                class="w-full bg-dark-800 border border-dark-700 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-gold-500 cursor-pointer"
+                                placeholder="Selecione a data">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Tipo de Evento / Localidade</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500"><i
+                                    class="fa-solid fa-champagne-glasses"></i></span>
+                            <input type="text" id="event-details" required
+                                class="w-full bg-dark-800 border border-dark-700 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-gold-500"
+                                placeholder="Ex: Casamento em Aracati">
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-dark-900 font-bold text-lg transition-all shadow-lg flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Enviar Solicitação via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================
+         SECTION: FOOTER
+         ========================================================== -->
+    <footer id="footer-section" class="bg-dark-900 border-t border-dark-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-2">
+                <div
+                    class="w-8 h-8 rounded-full bg-gradient-to-tr from-gold-600 to-gold-400 flex items-center justify-center text-dark-900 font-bold text-sm">
+                    JM
+                </div>
+                <span class="font-heading font-bold text-lg tracking-wider text-white">João Marcos</span>
+            </div>
+
+            <p class="text-sm text-gray-500">
+                &copy; 2026 Este site foi desenvolvido por Jescklay Mattos. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================
+         SECTION: LIGHTBOX MODAL DE FOTOS
+         ========================================================== -->
+    <div id="lightbox-modal"
+        class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button id="lightbox-close"
+            class="absolute top-6 right-6 text-white text-3xl hover:text-gold-400 focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Ampliada"
+            class="max-w-full max-h-[85vh] rounded-xl object-contain shadow-2xl border border-dark-700">
+    </div>
+
+    <!-- Scripts Externos & Arquivo JS Separado -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
